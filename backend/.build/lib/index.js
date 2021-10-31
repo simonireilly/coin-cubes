@@ -28,15 +28,20 @@ __export(exports, {
 });
 
 // stacks/MyStack.ts
+var import_core = __toModule(require("@aws-cdk/core"));
 var import_resources = __toModule(require("@serverless-stack/resources"));
 var MyStack = class extends import_resources.Stack {
   constructor(scope, id, props) {
     super(scope, id, props);
     const table = new import_resources.Table(this, "Connections", {
       fields: {
-        id: import_resources.TableFieldType.STRING
+        pk: import_resources.TableFieldType.STRING,
+        sk: import_resources.TableFieldType.STRING
       },
-      primaryIndex: { partitionKey: "id" }
+      primaryIndex: { partitionKey: "pk", sortKey: "sk" },
+      dynamodbTable: {
+        removalPolicy: import_core.RemovalPolicy.DESTROY
+      }
     });
     const api = new import_resources.WebSocketApi(this, "Api", {
       defaultFunctionProps: {
@@ -45,7 +50,9 @@ var MyStack = class extends import_resources.Stack {
         }
       },
       routes: {
-        $connect: "src/sockets/index.connect"
+        $connect: "src/sockets/index.connect",
+        $disconnect: "src/sockets/index.disconnect",
+        sendMessage: "src/sockets/index.sendMessage"
       }
     });
     api.attachPermissions([table.dynamodbTable]);

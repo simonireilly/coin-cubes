@@ -11,13 +11,21 @@
       "Properties": {
         "KeySchema": [
           {
-            "AttributeName": "id",
+            "AttributeName": "pk",
             "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "sk",
+            "KeyType": "RANGE"
           }
         ],
         "AttributeDefinitions": [
           {
-            "AttributeName": "id",
+            "AttributeName": "pk",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "sk",
             "AttributeType": "S"
           }
         ],
@@ -27,8 +35,8 @@
         },
         "TableName": "simonireilly-cloudguru-user-backend-Connections"
       },
-      "UpdateReplacePolicy": "Retain",
-      "DeletionPolicy": "Retain",
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
       "Metadata": {
         "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Connections/Table/Resource"
       }
@@ -201,7 +209,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": {
-            "Ref": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3Bucket8A4EB255"
+            "Ref": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3Bucket29E7DAC1"
           },
           "S3Key": {
             "Fn::Join": [
@@ -214,7 +222,7 @@
                       "Fn::Split": [
                         "||",
                         {
-                          "Ref": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3VersionKeyE267BA6C"
+                          "Ref": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3VersionKey7C6E549B"
                         }
                       ]
                     }
@@ -227,7 +235,7 @@
                       "Fn::Split": [
                         "||",
                         {
-                          "Ref": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3VersionKeyE267BA6C"
+                          "Ref": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3VersionKey7C6E549B"
                         }
                       ]
                     }
@@ -265,7 +273,7 @@
       ],
       "Metadata": {
         "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/Resource",
-        "aws:asset:path": "asset.1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57",
+        "aws:asset:path": "asset.8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22",
         "aws:asset:property": "Code"
       }
     },
@@ -355,20 +363,552 @@
       "Metadata": {
         "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_$connect/Resource"
       }
+    },
+    "ApidisconnectServiceRole73693786": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/$disconnect/ServiceRole/Resource"
+      }
+    },
+    "ApidisconnectServiceRoleDefaultPolicy37A097B3": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "xray:PutTraceSegments",
+                "xray:PutTelemetryRecords"
+              ],
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": "execute-api:ManageConnections",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:us-east-1:322567890963:",
+                    {
+                      "Ref": "ApiCD79AAA0"
+                    },
+                    "/simonireilly-cloudguru-user/POST/*"
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": "dynamodb:*",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "ConnectionsTable916FDB22",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "ConnectionsTable916FDB22",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "ApidisconnectServiceRoleDefaultPolicy37A097B3",
+        "Roles": [
+          {
+            "Ref": "ApidisconnectServiceRole73693786"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/$disconnect/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "ApidisconnectCB51A101": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3Bucket29E7DAC1"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3VersionKey7C6E549B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3VersionKey7C6E549B"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "ApidisconnectServiceRole73693786",
+            "Arn"
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "tableName": {
+              "Ref": "ConnectionsTable916FDB22"
+            },
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+          }
+        },
+        "Handler": "src/sockets/index.disconnect",
+        "MemorySize": 1024,
+        "Runtime": "nodejs14.x",
+        "Timeout": 10,
+        "TracingConfig": {
+          "Mode": "Active"
+        }
+      },
+      "DependsOn": [
+        "ApidisconnectServiceRoleDefaultPolicy37A097B3",
+        "ApidisconnectServiceRole73693786"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/$disconnect/Resource",
+        "aws:asset:path": "asset.8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22",
+        "aws:asset:property": "Code"
+      }
+    },
+    "ApiRoutedisconnectsimonireillycloudguruuserbackendmystackApiRoutedisconnectD51D8C57PermissionE795506B": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ApidisconnectCB51A101",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:us-east-1:322567890963:",
+              {
+                "Ref": "ApiCD79AAA0"
+              },
+              "/*/*$disconnect"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_$disconnect/simonireillycloudguruuserbackendmystackApiRoutedisconnectD51D8C57-Permission"
+      }
+    },
+    "ApiRoutedisconnectWebSocketIntegration551cb29f6266cb5deb48440be0e36d932F787D96": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "ApiCD79AAA0"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+              {
+                "Fn::GetAtt": [
+                  "ApidisconnectCB51A101",
+                  "Arn"
+                ]
+              },
+              "/invocations"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_$disconnect/WebSocketIntegration-551cb29f6266cb5deb48440be0e36d93/Resource"
+      }
+    },
+    "ApiRoutedisconnectA45E960F": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "ApiCD79AAA0"
+        },
+        "RouteKey": "$disconnect",
+        "Target": {
+          "Fn::Join": [
+            "",
+            [
+              "integrations/",
+              {
+                "Ref": "ApiRoutedisconnectWebSocketIntegration551cb29f6266cb5deb48440be0e36d932F787D96"
+              }
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_$disconnect/Resource"
+      }
+    },
+    "ApisendMessageServiceRole7306D794": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/sendMessage/ServiceRole/Resource"
+      }
+    },
+    "ApisendMessageServiceRoleDefaultPolicy3B45EA2A": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "xray:PutTraceSegments",
+                "xray:PutTelemetryRecords"
+              ],
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": "execute-api:ManageConnections",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:us-east-1:322567890963:",
+                    {
+                      "Ref": "ApiCD79AAA0"
+                    },
+                    "/simonireilly-cloudguru-user/POST/*"
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": "dynamodb:*",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "ConnectionsTable916FDB22",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "ConnectionsTable916FDB22",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "ApisendMessageServiceRoleDefaultPolicy3B45EA2A",
+        "Roles": [
+          {
+            "Ref": "ApisendMessageServiceRole7306D794"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/sendMessage/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "ApisendMessage1EC1CD34": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3Bucket29E7DAC1"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3VersionKey7C6E549B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3VersionKey7C6E549B"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "ApisendMessageServiceRole7306D794",
+            "Arn"
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "tableName": {
+              "Ref": "ConnectionsTable916FDB22"
+            },
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+          }
+        },
+        "Handler": "src/sockets/index.sendMessage",
+        "MemorySize": 1024,
+        "Runtime": "nodejs14.x",
+        "Timeout": 10,
+        "TracingConfig": {
+          "Mode": "Active"
+        }
+      },
+      "DependsOn": [
+        "ApisendMessageServiceRoleDefaultPolicy3B45EA2A",
+        "ApisendMessageServiceRole7306D794"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/sendMessage/Resource",
+        "aws:asset:path": "asset.8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22",
+        "aws:asset:property": "Code"
+      }
+    },
+    "ApiRoutesendMessagesimonireillycloudguruuserbackendmystackApiRoutesendMessage4101213CPermissionABED4E2A": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ApisendMessage1EC1CD34",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:us-east-1:322567890963:",
+              {
+                "Ref": "ApiCD79AAA0"
+              },
+              "/*/*sendMessage"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_sendMessage/simonireillycloudguruuserbackendmystackApiRoutesendMessage4101213C-Permission"
+      }
+    },
+    "ApiRoutesendMessageWebSocketIntegration9fb55b9ddc62708d76952cea5444c337C4B823E8": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "ApiCD79AAA0"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+              {
+                "Fn::GetAtt": [
+                  "ApisendMessage1EC1CD34",
+                  "Arn"
+                ]
+              },
+              "/invocations"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_sendMessage/WebSocketIntegration-9fb55b9ddc62708d76952cea5444c337/Resource"
+      }
+    },
+    "ApiRoutesendMessage4EBCC672": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "ApiCD79AAA0"
+        },
+        "RouteKey": "sendMessage",
+        "Target": {
+          "Fn::Join": [
+            "",
+            [
+              "integrations/",
+              {
+                "Ref": "ApiRoutesendMessageWebSocketIntegration9fb55b9ddc62708d76952cea5444c337C4B823E8"
+              }
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_sendMessage/Resource"
+      }
     }
   },
   "Parameters": {
-    "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3Bucket8A4EB255": {
+    "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3Bucket29E7DAC1": {
       "Type": "String",
-      "Description": "S3 bucket for asset \"1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57\""
+      "Description": "S3 bucket for asset \"8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22\""
     },
-    "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3VersionKeyE267BA6C": {
+    "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3VersionKey7C6E549B": {
       "Type": "String",
-      "Description": "S3 key for asset version \"1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57\""
+      "Description": "S3 key for asset version \"8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22\""
     },
-    "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57ArtifactHashBADC0DF5": {
+    "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22ArtifactHash0931C54B": {
       "Type": "String",
-      "Description": "Artifact hash for asset \"1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57\""
+      "Description": "Artifact hash for asset \"8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22\""
     }
   },
   "Outputs": {

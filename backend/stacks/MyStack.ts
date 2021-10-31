@@ -1,3 +1,4 @@
+import { RemovalPolicy } from '@aws-cdk/core';
 import {
   App,
   Stack,
@@ -14,9 +15,13 @@ export default class MyStack extends Stack {
     // Create the table
     const table = new Table(this, 'Connections', {
       fields: {
-        id: TableFieldType.STRING,
+        pk: TableFieldType.STRING,
+        sk: TableFieldType.STRING,
       },
-      primaryIndex: { partitionKey: 'id' },
+      primaryIndex: { partitionKey: 'pk', sortKey: 'sk' },
+      dynamodbTable: {
+        removalPolicy: RemovalPolicy.DESTROY,
+      },
     });
 
     // Create the websocket API
@@ -28,9 +33,9 @@ export default class MyStack extends Stack {
       },
       routes: {
         $connect: 'src/sockets/index.connect',
+        $disconnect: 'src/sockets/index.disconnect',
+        sendMessage: 'src/sockets/index.sendMessage',
         // $default: 'src/default.main',
-        // $disconnect: 'src/disconnect.main',
-        // sendMessage: 'src/send-message.main',
       },
     });
 

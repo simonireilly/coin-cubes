@@ -19,13 +19,13 @@
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57",
-              "id": "1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57",
+              "path": "asset.8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22",
+              "id": "8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22",
               "packaging": "zip",
-              "sourceHash": "1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57",
-              "s3BucketParameter": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3Bucket8A4EB255",
-              "s3KeyParameter": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3VersionKeyE267BA6C",
-              "artifactHashParameter": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57ArtifactHashBADC0DF5"
+              "sourceHash": "8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22",
+              "s3BucketParameter": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3Bucket29E7DAC1",
+              "s3KeyParameter": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3VersionKey7C6E549B",
+              "artifactHashParameter": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22ArtifactHash0931C54B"
             },
             "trace": [
               "ConstructNode.addMetadata (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
@@ -43,7 +43,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -62,7 +62,7 @@
             "trace": [
               "MyStack.addMetadataResource (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Stack.ts:96:5)",
               "new Stack (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Stack.ts:34:10)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:12:5)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:13:5)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -84,7 +84,7 @@
               "ConstructNode.addMetadata (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
               "new Table (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:707:38)",
               "new Table (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Table.ts:168:28)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:15:19)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:16:19)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -103,7 +103,7 @@
             "trace": [
               "new Table (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:678:18)",
               "new Table (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Table.ts:168:28)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:15:19)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:16:19)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -122,7 +122,7 @@
             "trace": [
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/api.ts:51:22)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:103:27)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -141,7 +141,7 @@
             "trace": [
               "new WebSocketStage (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/stage.ts:65:5)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:158:29)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -161,7 +161,7 @@
               "new LogGroup (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-logs/lib/log-group.ts:237:22)",
               "Object.buildAccessLogData (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/util/apiGatewayV2AccessLog.ts:80:16)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:167:45)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -187,7 +187,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -216,7 +216,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -241,7 +241,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -266,7 +266,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -291,7 +291,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -314,7 +314,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -326,10 +326,316 @@
             ]
           }
         ],
-        "/simonireilly-cloudguru-user-backend-my-stack/AssetParameters/1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57/S3Bucket": [
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/$disconnect/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3Bucket8A4EB255",
+            "data": "ApidisconnectServiceRole73693786",
+            "trace": [
+              "new Role (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-iam/lib/role.ts:199:18)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function.ts:315:31)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:338:7)",
+              "Function.fromDefinition (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:462:14)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:273:23)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/$disconnect/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApidisconnectServiceRoleDefaultPolicy37A097B3",
+            "trace": [
+              "new Policy (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-iam/lib/role.ts:236:28)",
+              "Function.addToRolePolicy (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:146:15)",
+              "Function.buildTracingConfig (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function.ts:699:10)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function.ts:399:27)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:338:7)",
+              "Function.fromDefinition (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:462:14)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:273:23)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/$disconnect/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApidisconnectCB51A101",
+            "trace": [
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function.ts:377:35)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:338:7)",
+              "Function.fromDefinition (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:462:14)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:273:23)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/Route_$disconnect/simonireillycloudguruuserbackendmystackApiRoutedisconnectD51D8C57-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiRoutedisconnectsimonireillycloudguruuserbackendmystackApiRoutedisconnectD51D8C57PermissionE795506B",
+            "trace": [
+              "Function.addPermission (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:130:5)",
+              "LambdaWebSocketIntegration.bind (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2-integrations/lib/websocket/lambda.ts:23:24)",
+              "new WebSocketRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/route.ts:48:38)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:284:19)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/Route_$disconnect/WebSocketIntegration-551cb29f6266cb5deb48440be0e36d93/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiRoutedisconnectWebSocketIntegration551cb29f6266cb5deb48440be0e36d932F787D96",
+            "trace": [
+              "new WebSocketIntegration (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/integration.ts:45:19)",
+              "WebSocketApi._addIntegration (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/api.ts:80:25)",
+              "new WebSocketRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/route.ts:53:44)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:284:19)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/Route_$disconnect/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiRoutedisconnectA45E960F",
+            "trace": [
+              "new WebSocketRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/route.ts:55:19)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:284:19)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/sendMessage/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApisendMessageServiceRole7306D794",
+            "trace": [
+              "new Role (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-iam/lib/role.ts:199:18)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function.ts:315:31)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:338:7)",
+              "Function.fromDefinition (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:462:14)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:273:23)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/sendMessage/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApisendMessageServiceRoleDefaultPolicy3B45EA2A",
+            "trace": [
+              "new Policy (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-iam/lib/role.ts:236:28)",
+              "Function.addToRolePolicy (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:146:15)",
+              "Function.buildTracingConfig (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function.ts:699:10)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function.ts:399:27)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:338:7)",
+              "Function.fromDefinition (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:462:14)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:273:23)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/sendMessage/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApisendMessage1EC1CD34",
+            "trace": [
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function.ts:377:35)",
+              "new Function (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:338:7)",
+              "Function.fromDefinition (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Function.ts:462:14)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:273:23)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/Route_sendMessage/simonireillycloudguruuserbackendmystackApiRoutesendMessage4101213C-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiRoutesendMessagesimonireillycloudguruuserbackendmystackApiRoutesendMessage4101213CPermissionABED4E2A",
+            "trace": [
+              "Function.addPermission (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:130:5)",
+              "LambdaWebSocketIntegration.bind (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2-integrations/lib/websocket/lambda.ts:23:24)",
+              "new WebSocketRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/route.ts:48:38)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:284:19)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/Route_sendMessage/WebSocketIntegration-9fb55b9ddc62708d76952cea5444c337/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiRoutesendMessageWebSocketIntegration9fb55b9ddc62708d76952cea5444c337C4B823E8",
+            "trace": [
+              "new WebSocketIntegration (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/integration.ts:45:19)",
+              "WebSocketApi._addIntegration (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/api.ts:80:25)",
+              "new WebSocketRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/route.ts:53:44)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:284:19)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/Api/Route_sendMessage/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiRoutesendMessage4EBCC672",
+            "trace": [
+              "new WebSocketRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/aws-apigatewayv2/lib/websocket/route.ts:55:19)",
+              "WebSocketApi.addRoute (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:284:19)",
+              "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:225:23",
+              "Array.forEach (<anonymous>)",
+              "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
+              "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
+              "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
+              "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
+              "Module._compile (internal/modules/cjs/loader.js:1068:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)",
+              "Module.load (internal/modules/cjs/loader.js:933:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:774:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/simonireilly-cloudguru-user-backend-my-stack/AssetParameters/8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3Bucket29E7DAC1",
             "trace": [
               "new FileAssetParameters (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
               "LegacyStackSynthesizer.doAddFileAsset (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
@@ -346,7 +652,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -358,10 +664,10 @@
             ]
           }
         ],
-        "/simonireilly-cloudguru-user-backend-my-stack/AssetParameters/1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57/S3VersionKey": [
+        "/simonireilly-cloudguru-user-backend-my-stack/AssetParameters/8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3VersionKeyE267BA6C",
+            "data": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22S3VersionKey7C6E549B",
             "trace": [
               "new FileAssetParameters (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
               "LegacyStackSynthesizer.doAddFileAsset (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
@@ -378,7 +684,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -390,10 +696,10 @@
             ]
           }
         ],
-        "/simonireilly-cloudguru-user-backend-my-stack/AssetParameters/1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57/ArtifactHash": [
+        "/simonireilly-cloudguru-user-backend-my-stack/AssetParameters/8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57ArtifactHashBADC0DF5",
+            "data": "AssetParameters8127a28f65645a1dce3d45bff015dc95921a6ed83929bb5c5f5a970968088c22ArtifactHash0931C54B",
             "trace": [
               "new FileAssetParameters (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
               "LegacyStackSynthesizer.doAddFileAsset (/home/simon/code/projects/coin-cubes/backend/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
@@ -410,7 +716,7 @@
               "Array.forEach (<anonymous>)",
               "WebSocketApi.addRoutes (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:223:25)",
               "new WebSocketApi (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/WebSocketApi.ts:193:12)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:23:17)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:28:17)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
@@ -430,7 +736,7 @@
               "/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Stack.ts:84:9",
               "Array.forEach (<anonymous>)",
               "MyStack.addOutputs (/home/simon/code/projects/coin-cubes/backend/node_modules/@serverless-stack/resources/src/Stack.ts:79:26)",
-              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:41:10)",
+              "new MyStack (/home/simon/code/projects/coin-cubes/backend/stacks/MyStack.ts:46:10)",
               "Object.main (/home/simon/code/projects/coin-cubes/backend/stacks/index.ts:10:3)",
               "Object.<anonymous> (/home/simon/code/projects/coin-cubes/backend/.build/run.js:93:16)",
               "Module._compile (internal/modules/cjs/loader.js:1068:30)",
