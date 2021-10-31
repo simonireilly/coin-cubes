@@ -1,0 +1,125 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#pane {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 2px solid gainsboro;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.player,
+.opponent {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: hotpink;
+  border-radius: 20%;
+}
+
+.opponent {
+  background-color: black;
+}
+
+.pill {
+  background-color: gainsboro;
+  color: darkslategrey;
+  border-radius: 1rem;
+  position: relative;
+  margin: auto;
+  padding: 1px 5px;
+  bottom: 20px;
+}
+
+.board {
+  padding: 2em;
+}
+
+.controls {
+  background-color: gainsboro;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.control {
+  font-size: 2em;
+  height: 2em;
+  width: 2em;
+  margin: 0.2em;
+
+  /* Prevent touch highlighting */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.up-down-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.coin {
+  position: absolute;
+  background-color: gold;
+  border: 3px darkgoldenrod solid;
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
+}
+
+.button {
+  border-radius: 1em;
+  font-size: 1em;
+  font-weight: 800;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button--positive {
+  background-color: seagreen;
+  color: gainsboro;
+}
+
+.button--negative {
+  background-color: crimson;
+  color: gainsboro;
+}
+
+.button:hover {
+}
+
+.user--image {
+  border-radius: 0.2em;
+}

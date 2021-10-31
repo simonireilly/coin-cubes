@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 1em;
+
+  padding: 1em;
+
+  box-shadow: 0 0 4px 4px #ccc;
+  border-radius: 0.2em;
+}
+
+.profileWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1em;
+}

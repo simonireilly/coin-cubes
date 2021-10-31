@@ -1,0 +1,16 @@
+{
+  "cSpell.words": ["drawio", "roomies", "roomservice"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2
+}

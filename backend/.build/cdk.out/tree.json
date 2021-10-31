@@ -1,0 +1,635 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.126.0"
+        }
+      },
+      "simonireilly-cloudguru-user-backend-my-stack": {
+        "id": "simonireilly-cloudguru-user-backend-my-stack",
+        "path": "simonireilly-cloudguru-user-backend-my-stack",
+        "children": {
+          "SSTMetadata": {
+            "id": "SSTMetadata",
+            "path": "simonireilly-cloudguru-user-backend-my-stack/SSTMetadata",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnResource",
+              "version": "1.126.0"
+            }
+          },
+          "Connections": {
+            "id": "Connections",
+            "path": "simonireilly-cloudguru-user-backend-my-stack/Connections",
+            "children": {
+              "Table": {
+                "id": "Table",
+                "path": "simonireilly-cloudguru-user-backend-my-stack/Connections/Table",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Connections/Table/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "keySchema": [
+                          {
+                            "attributeName": "id",
+                            "keyType": "HASH"
+                          }
+                        ],
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "id",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "billingMode": "PAY_PER_REQUEST",
+                        "pointInTimeRecoverySpecification": {
+                          "pointInTimeRecoveryEnabled": true
+                        },
+                        "tableName": "simonireilly-cloudguru-user-backend-Connections"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-dynamodb.CfnTable",
+                      "version": "1.126.0"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Connections/Table/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.126.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-dynamodb.Table",
+                  "version": "1.126.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.126.0"
+            }
+          },
+          "Api": {
+            "id": "Api",
+            "path": "simonireilly-cloudguru-user-backend-my-stack/Api",
+            "children": {
+              "Api": {
+                "id": "Api",
+                "path": "simonireilly-cloudguru-user-backend-my-stack/Api/Api",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Api/Api/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Api",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "simonireilly-cloudguru-user-backend-Api",
+                        "protocolType": "WEBSOCKET",
+                        "routeSelectionExpression": "$request.body.action"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-apigatewayv2.CfnApi",
+                      "version": "1.126.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-apigatewayv2.WebSocketApi",
+                  "version": "1.126.0"
+                }
+              },
+              "Stage": {
+                "id": "Stage",
+                "path": "simonireilly-cloudguru-user-backend-my-stack/Api/Stage",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Api/Stage/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Stage",
+                      "aws:cdk:cloudformation:props": {
+                        "apiId": {
+                          "Ref": "ApiCD79AAA0"
+                        },
+                        "stageName": "simonireilly-cloudguru-user",
+                        "accessLogSettings": {
+                          "format": "{\"requestTime\":\"$context.requestTime\",\"requestId\":\"$context.requestId\",\"eventType\":\"$context.eventType\",\"routeKey\":\"$context.routeKey\",\"status\":$context.status,\"integrationRequestId\":\"$context.awsEndpointRequestId\",\"integrationStatus\":\"$context.integrationStatus\",\"integrationLatency\":\"$context.integrationLatency\",\"integrationServiceStatus\":\"$context.integration.integrationStatus\",\"ip\":\"$context.identity.sourceIp\",\"userAgent\":\"$context.identity.userAgent\",\"cognitoIdentityId\":\"$context.identity.cognitoIdentityId\",\"connectedAt\":\"$context.connectedAt\",\"connectionId\":\"$context.connectionId\"}",
+                          "destinationArn": {
+                            "Fn::GetAtt": [
+                              "ApiLogGroup1717FE17",
+                              "Arn"
+                            ]
+                          }
+                        },
+                        "autoDeploy": true
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-apigatewayv2.CfnStage",
+                      "version": "1.126.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-apigatewayv2.WebSocketStage",
+                  "version": "1.126.0"
+                }
+              },
+              "LogGroup": {
+                "id": "LogGroup",
+                "path": "simonireilly-cloudguru-user-backend-my-stack/Api/LogGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Api/LogGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "logGroupName": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "/aws/vendedlogs/apis/simonireilly-cloudguru-user-backend-Api-",
+                              {
+                                "Ref": "ApiCD79AAA0"
+                              },
+                              "/simonireilly-cloudguru-user"
+                            ]
+                          ]
+                        },
+                        "retentionInDays": 731
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-logs.CfnLogGroup",
+                      "version": "1.126.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-logs.LogGroup",
+                  "version": "1.126.0"
+                }
+              },
+              "$connect": {
+                "id": "$connect",
+                "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.CfnRole",
+                          "version": "1.126.0"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "xray:PutTraceSegments",
+                                        "xray:PutTelemetryRecords"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    },
+                                    {
+                                      "Action": "execute-api:ManageConnections",
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":execute-api:us-east-1:322567890963:",
+                                            {
+                                              "Ref": "ApiCD79AAA0"
+                                            },
+                                            "/simonireilly-cloudguru-user/POST/*"
+                                          ]
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "ConnectionsTable916FDB22",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "ConnectionsTable916FDB22",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "ApiconnectServiceRoleDefaultPolicy530B764C",
+                                "roles": [
+                                  {
+                                    "Ref": "ApiconnectServiceRoleB38A655D"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-iam.CfnPolicy",
+                              "version": "1.126.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.Policy",
+                          "version": "1.126.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.Role",
+                      "version": "1.126.0"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/core.AssetStaging",
+                          "version": "1.126.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/Code/AssetBucket",
+                        "children": {
+                          "Notifications": {
+                            "id": "Notifications",
+                            "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/Code/AssetBucket/Notifications",
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/core.Construct",
+                              "version": "1.126.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-s3.BucketBase",
+                          "version": "1.126.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-s3-assets.Asset",
+                      "version": "1.126.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Api/$connect/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Ref": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3Bucket8A4EB255"
+                          },
+                          "s3Key": {
+                            "Fn::Join": [
+                              "",
+                              [
+                                {
+                                  "Fn::Select": [
+                                    0,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3VersionKeyE267BA6C"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Fn::Select": [
+                                    1,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParameters1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57S3VersionKeyE267BA6C"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            ]
+                          }
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "ApiconnectServiceRoleB38A655D",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "tableName": {
+                              "Ref": "ConnectionsTable916FDB22"
+                            },
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                          }
+                        },
+                        "handler": "src/sockets/index.connect",
+                        "memorySize": 1024,
+                        "runtime": "nodejs14.x",
+                        "timeout": 10,
+                        "tracingConfig": {
+                          "mode": "Active"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-lambda.CfnFunction",
+                      "version": "1.126.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-lambda.Function",
+                  "version": "1.126.0"
+                }
+              },
+              "Route_$connect": {
+                "id": "Route_$connect",
+                "path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_$connect",
+                "children": {
+                  "simonireillycloudguruuserbackendmystackApiRouteconnect8B2E0AD1-Permission": {
+                    "id": "simonireillycloudguruuserbackendmystackApiRouteconnect8B2E0AD1-Permission",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_$connect/simonireillycloudguruuserbackendmystackApiRouteconnect8B2E0AD1-Permission",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                      "aws:cdk:cloudformation:props": {
+                        "action": "lambda:InvokeFunction",
+                        "functionName": {
+                          "Fn::GetAtt": [
+                            "Apiconnect6ADFCB1F",
+                            "Arn"
+                          ]
+                        },
+                        "principal": "apigateway.amazonaws.com",
+                        "sourceArn": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":execute-api:us-east-1:322567890963:",
+                              {
+                                "Ref": "ApiCD79AAA0"
+                              },
+                              "/*/*$connect"
+                            ]
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-lambda.CfnPermission",
+                      "version": "1.126.0"
+                    }
+                  },
+                  "WebSocketIntegration-82f8a41f8282fef6f9427d0f17671b50": {
+                    "id": "WebSocketIntegration-82f8a41f8282fef6f9427d0f17671b50",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_$connect/WebSocketIntegration-82f8a41f8282fef6f9427d0f17671b50",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_$connect/WebSocketIntegration-82f8a41f8282fef6f9427d0f17671b50/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Integration",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Ref": "ApiCD79AAA0"
+                            },
+                            "integrationType": "AWS_PROXY",
+                            "integrationUri": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                  {
+                                    "Fn::GetAtt": [
+                                      "Apiconnect6ADFCB1F",
+                                      "Arn"
+                                    ]
+                                  },
+                                  "/invocations"
+                                ]
+                              ]
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-apigatewayv2.CfnIntegration",
+                          "version": "1.126.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-apigatewayv2.WebSocketIntegration",
+                      "version": "1.126.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/Api/Route_$connect/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "apiId": {
+                          "Ref": "ApiCD79AAA0"
+                        },
+                        "routeKey": "$connect",
+                        "authorizationType": "NONE",
+                        "target": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "integrations/",
+                              {
+                                "Ref": "ApiRouteconnectWebSocketIntegration82f8a41f8282fef6f9427d0f17671b505B9C9811"
+                              }
+                            ]
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-apigatewayv2.CfnRoute",
+                      "version": "1.126.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-apigatewayv2.WebSocketRoute",
+                  "version": "1.126.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.126.0"
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "simonireilly-cloudguru-user-backend-my-stack/AssetParameters",
+            "children": {
+              "1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57": {
+                "id": "1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57",
+                "path": "simonireilly-cloudguru-user-backend-my-stack/AssetParameters/1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/AssetParameters/1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57/S3Bucket",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.126.0"
+                    }
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/AssetParameters/1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57/S3VersionKey",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.126.0"
+                    }
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "simonireilly-cloudguru-user-backend-my-stack/AssetParameters/1e9f0ed10f1d2f8804ca8725c5393640e884369ae53be38e76a56f7c3af30b57/ArtifactHash",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.126.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.126.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.126.0"
+            }
+          },
+          "ApiEndpoint": {
+            "id": "ApiEndpoint",
+            "path": "simonireilly-cloudguru-user-backend-my-stack/ApiEndpoint",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnOutput",
+              "version": "1.126.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.126.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.126.0"
+    }
+  }
+}
